@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project(FileCompression)
+set(CMAKE_CXX_STANDARD 11)
+find_package(ZLIB REQUIRED)
+include_directories(${ZLIB_INCLUDE_DIRS} src)
+add_executable(FileCompression src/main.cpp src/FileCompressor.cpp src/FileDecompressor.cpp src/Logger.cpp)
+target_link_libraries(FileCompression ${ZLIB_LIBRARIES})
